@@ -1,0 +1,99 @@
+### REGISTRO DE USUÁRIO
+POST http://localhost:8080/auth/register
+Content-Type: application/json
+
+{
+  "nome": "Usuário Teste",
+  "email": "usuario_{{randomInt 1000 9999}}@teste.com",
+  "senha": "senha123"
+}
+
+### LOGIN DE USUÁRIO
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "usuario_1234@teste.com", // Substitua pelo email cadastrado acima
+  "senha": "senha123"
+}
+
+### CRIAR LOCAL DE RISCO
+POST http://localhost:8080/locais
+Content-Type: application/json
+
+{
+  "cidade": "Cidade {{randomInt 1 100}}",
+  "bairro": "Bairro {{randomInt 1 100}}",
+  "rua": "Rua {{randomInt 1 100}}",
+  "numero": "{{randomInt 1 999}}"
+}
+
+### LISTAR LOCAIS DE RISCO
+GET http://localhost:8080/locais
+
+### BUSCAR LOCAL DE RISCO POR ID
+GET http://localhost:8080/locais/1
+
+### ATUALIZAR LOCAL DE RISCO
+PUT http://localhost:8080/locais/1
+Content-Type: application/json
+
+{
+  "cidade": "Cidade Atualizada",
+  "bairro": "Bairro Atualizado",
+  "rua": "Rua Atualizada",
+  "numero": "999"
+}
+
+### DELETAR LOCAL DE RISCO
+DELETE http://localhost:8080/locais/1
+
+### CRIAR SENSOR
+POST http://localhost:8080/sensores
+Content-Type: application/json
+
+{
+  "nome": "Sensor {{randomInt 1 1000}}",
+  "descricao": "Sensor de Teste"
+}
+
+### LISTAR SENSORES
+GET http://localhost:8080/sensores
+
+### BUSCAR SENSOR POR ID
+GET http://localhost:8080/sensores/1
+
+### ATUALIZAR SENSOR
+PUT http://localhost:8080/sensores/1
+Content-Type: application/json
+
+{
+  "nome": "Sensor Atualizado",
+  "descricao": "Sensor atualizado para teste"
+}
+
+### DELETAR SENSOR
+DELETE http://localhost:8080/sensores/1
+
+### CRIAR ALERTA
+POST http://localhost:8080/alertas
+Content-Type: application/json
+
+{
+  "mensagem": "Alerta gerado automaticamente",
+  "sensor": { "id": 1 },
+  "localDeRisco": { "id": 1 },
+  "status": "PENDENTE"
+}
+
+### LISTAR ALERTAS
+GET http://localhost:8080/alertas
+
+### BUSCAR ALERTA POR ID
+GET http://localhost:8080/alertas/1
+
+### ATUALIZAR STATUS DO ALERTA
+PUT http://localhost:8080/alertas/1/status?status=RESOLVIDO
+
+### DELETAR ALERTA
+DELETE http://localhost:8080/alertas/1 
