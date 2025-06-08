@@ -6,6 +6,11 @@ API de Monitoramento de Áreas de Risco com JWT
 
 A SafeZone API é uma aplicação Spring Boot que fornece endpoints para monitoramento de áreas de risco, gerenciamento de sensores e alertas. A API utiliza autenticação JWT para garantir a segurança dos dados.
 
+## Integrantes
+RM556270 - Bianca Vitoria - 2TDSPZ
+RM555166 - Guilherme Camargo - 2TDSPM
+RM555131 - Icaro Americo - 2TDSPM
+
 ## Tecnologias Utilizadas
 
 - Java 21
